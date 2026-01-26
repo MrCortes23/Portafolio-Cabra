@@ -1,7 +1,7 @@
 
-  # Portafolio de Desarrollador
+  # Portafolio CABRA
 
-  This is a code bundle for Portafolio de Desarrollador. The original project is available at https://www.figma.com/design/JUEhsgIzIejiBYKKn6BPzH/Portafolio-de-Desarrollador.
+  Inicializando portafolio | David Cortes
 
   ## Running the code
 
