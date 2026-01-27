@@ -41,7 +41,7 @@ export function Hero() {
       <div className="w-full h-full flex">
         {/* Imagen lado izquierdo - ocupa todo el lateral con animación */}
         <motion.div
-          className="hidden md:flex md:w-1/2 relative"
+          className="hidden md:flex md:w-[60%] md:-mr-[10%] relative z-10"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -126,12 +126,12 @@ export function Hero() {
 
             {/* Descripción con animación */}
             <motion.p
-              className="text-lg text-gray-400 mb-8 leading-relaxed text-center"
+              className="text-lg text-gray-400 mb-10 leading-relaxed text-center"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              Creando soluciones digitales innovadoras con código limpio y diseño centrado en el usuario. Transformo ideas en experiencias excepcionales.
+              Desarrollando soluciones digitales innovadoras con un diseño centrado en el usuario y su experiencia. Todo es posible con código eficiente.
             </motion.p>
 
             {/* Botones con animación */}

@@ -13,14 +13,14 @@ export function About() {
     {
       icon: <Server className="w-6 h-6 text-[#F4BB46]" />,
       title: "Proyectos",
-      value: "7+",
-      desc: "Completados con éxito"
+      value: "6+",
+      desc: "Supliendo necesidades y dando resultados"
     },
     {
       icon: <Users className="w-6 h-6 text-[#F4BB46]" />,
       title: "Clientes",
-      value: "2+",
-      desc: "Satisfechos globalmente"
+      value: "Optimización",
+      desc: "Satisfechos y optimizados por sistemas"
     }
   ];
 
@@ -35,7 +35,7 @@ export function About() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#2d3365] via-[#2d3365]/90 to-[#232757]/80"></div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 h-full flex flex-col md:flex-row gap-50 relative z-10">
+      <div className="container mx-auto px-6 md:px-12 h-full flex flex-col md:flex-row gap-35 relative z-10">
 
         {/* Columna Izquierda (Antes Derecha) - Contenido */}
         <motion.div
@@ -46,21 +46,21 @@ export function About() {
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-3xl md:text-5xl font-light text-gray-100 mb-6 text-center md:text-center mt-20"
+            className="text-3xl md:text-5xl font-light text-gray-100 mb-6 text-center md:text-right mt-10"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Sobre <span className="text-[#F4BB46] font-medium">David</span>
+            Sobre <span className="text-[#F4BB46] font-medium">David...</span>
           </motion.h2>
 
-          <div className="space-y-6 text-gray-300 md:text-gray-400 text-lg leading-relaxed mb-10 mt-10 text-center md:text-center">
+          <div className="space-y-6 text-gray-300 md:text-gray-400 text-lg leading-relaxed mb-10 text-center md:text-right">
             <p>
-              Tecnólogo en análisis y desarrollo de software, altamente motivado y proactivo en desarrollar las diferentes competencias que sean propuestas, comprometido en brindar soluciones efectivas, excelente adaptación para trabajar en equipo, toma de decisiones estratégicas y optimización de procesos para alcanzar resultados exitosos.
+              Tecnólogo en <span className="text-[#F4BB46] font-medium"> Análisis y Desarrollo de Software</span>, estudiante de <span className="text-[white] font-medium">Ingeniería de Software</span> con alta motivación y proactividad para gestionar las diferentes situaciones que sean propuestas, comprometido en brindar soluciones efectivas, con excelente adaptación para trabajar en equipo, toma de decisiones estratégicas y optimización de procesos para alcanzar resultados.
             </p>
             <p>
-              Mi enfoque se centra en escribir código limpio y eficiente, siempre buscando la mejor solución para cada desafío. Me mantengo actualizado con las últimas tecnologías para ofrecer resultados de vanguardia.
+              Me centro en escribir código eficiente, siempre buscando la mejor solución para cada problema. Me mantengo actualizado y en orden con las tecnologías que esten a disposición para ofrecer adaptabilidad.
             </p>
           </div>
 
