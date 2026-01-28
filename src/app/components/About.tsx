@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { Code, Server, Users } from "lucide-react";
 import { MatrixRain } from "./ui/MatrixRain";
+import { DavidLogo } from "./ui/david";
 
 export function About() {
   const stats = [
@@ -46,13 +47,19 @@ export function About() {
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-3xl md:text-5xl font-light text-gray-100 mb-6 text-center md:text-right mt-10"
+            className="text-3xl md:text-5xl font-light text-gray-100 mb-6 flex flex-wrap items-end justify-center md:justify-end gap-3 mt-10"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Sobre <span className="text-[#F4BB46] font-medium">David...</span>
+            <span>Sobre</span>
+            {/* Insertamos el logo pasando las props para ajustarlo al título */}
+            <DavidLogo
+              textSize="text-3xl md:text-5xl"
+              goatSize="w-12 h-12 md:w-18 md:h-18"
+              goatTop="-top-6 md:-top-10"
+            />
           </motion.h2>
 
           <div className="space-y-6 text-gray-300 md:text-gray-400 text-lg leading-relaxed mb-10 text-center md:text-right">

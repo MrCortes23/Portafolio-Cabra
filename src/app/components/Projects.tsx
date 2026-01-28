@@ -3,20 +3,22 @@ import { Badge } from "@/app/components/ui/badge";
 import { Button } from "@/app/components/ui/button";
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import pastas1 from "@/assets/pastas1.jpg";
-import pastas2 from "@/assets/pastas2.jpg";
-import pastas3 from "@/assets/pastas3.jpg";
-import dogs1 from "@/assets/dogs1.jpg";
 
+
+interface ProjectMedia {
+  type: 'image' | 'video';
+  url: string;
+}
 
 interface Project {
   id: number;
   title: string;
   work: string;
   description: string;
-  images: string[];
+  media: ProjectMedia[];
   tags: string[];
   github: string;
+  logoUrl?: string;
 }
 
 const projects: Project[] = [
@@ -25,92 +27,85 @@ const projects: Project[] = [
     title: "DOGS",
     work: "Proyecto personal DOGS",
     description: "Sistema de información y gestión para Guarderia Canina Campestre.",
-    images: [
-      dogs1
+    media: [
+      { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769570358/doggs1_Hecho_con_Clipchamp_rnzzbw.mp4" },
+      { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769568447/DOGS2_Hecho_con_Clipchamp_1_ame6g3.mp4" },
+      { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769568452/Dogs3_Hecho_con_Clipchamp_guegfg.mp4" },
+      { type: 'image', url: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769570186/Dise%C3%B1o_sin_t%C3%ADtulo_3_trgtfx.png" },
     ],
     tags: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
     github: "https://github.com/MrCortes23/DOGSv2",
+    logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAdOFgj2N1FUDMQjCRJkBWCxLkdKKfK-XHeQ&s", // Add logo URL here
   },
   {
     id: 2,
     title: "Reportes PASTAS",
     work: "Productos Alimenticios Doria S.A.S",
     description: "Sistema colaborativo de gestión de tipos de anomalías/reportes presentados dentro de la planta de producción.",
-    images: [
-      pastas1,
-      pastas2,
-      pastas3
-    ],
+    media: [],
     tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
-    github: "https://github.com/MrCortes23/Unificacion-Data-Pastas-DAVIDCORTES"
+    github: "https://github.com/MrCortes23/Unificacion-Data-Pastas-DAVIDCORTES",
+    logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
   },
   {
     id: 3,
     title: "Sistema de DADAS DE BAJA",
     work: "Productos Alimenticios Doria S.A.S",
     description: "Sistema notificador y aprobador por grupos de correos, generación de solicitudes de baja de productos/elementos.",
-    images: [
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=80",
-      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1200&q=80",
-      "https://images.unsplash.com/photo-1555421689-491a97ff2040?w=1200&q=80"
-    ],
+    media: [],
     tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
-    github: "https://github.com/MrCortes23/Dadas-de-baja-DAVIDCORTES"
+    github: "https://github.com/MrCortes23/Dadas-de-baja-DAVIDCORTES",
+    logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
   },
   {
     id: 4,
     title: "Sistema de SALIDA DE PRODUCTOS",
-    work: "Productos Alimenticios Doria S.A.S",
+    work: "Pastas Comarrico S.A.S",
     description: "Sistema de control de salida de productos, estadísticas de salidas, generación de reportes y notificaciones de vencimiento/proximidad por correo electrónico.",
-    images: [
-      "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&q=80",
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80",
-      "https://images.unsplash.com/photo-1576091160550-217358c7db81?w=1200&q=80"
-    ],
+    media: [],
     tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
-    github: "https://github.com/MrCortes23/Salida-de-producto-COMARRICO-DAVIDCORTES"
+    github: "https://github.com/MrCortes23/Salida-de-producto-COMARRICO-DAVIDCORTES",
+    logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2UX3iIW0H2ZnPR-OTtRgHUHXPOtth8lOPqQ&s",
   },
   {
     id: 5,
     title: "Protocolo Higiene, Limpieza y Desinfección",
     work: "Productos Alimenticios Doria S.A.S",
     description: "Sistema de verificación y chequeo de cada maquina de producción para realizar el protocolo de higiene, limpieza y desinfección.",
-    images: [
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=80",
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=80",
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80"
-    ],
+    media: [],
     tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
-    github: "https://github.com/MrCortes23/Protocolo-Higiene-Limpieza-y-Desinfeccion-DAVIDCORTES"
+    github: "https://github.com/MrCortes23/Protocolo-Higiene-Limpieza-y-Desinfeccion-DAVIDCORTES",
+    logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
   },
   {
     id: 6,
     title: "Portafolio CABRA",
     work: "Proyecto personal PORTAFOLIO",
     description: "Portafolio personal para exhibición de proyectos.",
-    images: [
-      "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=1200&q=80",
-      "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=1200&q=80",
-      "https://images.unsplash.com/photo-1504384308090-c54be3855463?w=1200&q=80"
-    ],
+    media: [],
     tags: ["React", "Vite", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/MrCortes23/Portafolio-Cabra"
+    github: "https://github.com/MrCortes23/Portafolio-Cabra",
+    logoUrl: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769571761/goatabout_yrstid.png",
   }
 ];
 
 function ProjectRow({ project, index }: { project: Project; index: number }) {
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const isAlt = index % 2 !== 0;
 
-  const nextImage = (e: React.MouseEvent) => {
+  const nextMedia = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setCurrentImage((prev) => (prev + 1) % project.images.length);
+    if (project.media.length > 1) {
+      setCurrentIndex((prev) => (prev + 1) % project.media.length);
+    }
   };
 
-  const prevImage = (e: React.MouseEvent) => {
+  const prevMedia = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setCurrentImage((prev) => (prev - 1 + project.images.length) % project.images.length);
+    if (project.media.length > 1) {
+      setCurrentIndex((prev) => (prev - 1 + project.media.length) % project.media.length);
+    }
   };
 
   return (
@@ -121,52 +116,82 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
       transition={{ duration: 0.6 }}
       className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-20 ${isAlt ? 'md:flex-row-reverse' : ''}`}
     >
-      {/* Media Content - Takes up more space */}
-      <div
-        className="w-full md:w-3/5 aspect-video relative rounded-xl overflow-hidden shadow-2xl shadow-[#F4BB46]/5 group border border-[#F4BB46]/10"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <div className="w-full h-full bg-[#2d3365]">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentImage}
-              src={project.images[currentImage]}
-              alt={project.title}
-              initial={{ opacity: 0, scale: 1.05 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className="w-full h-full object-cover"
-            />
-          </AnimatePresence>
+      <div className="w-full md:w-3/5 aspect-video relative group">
+        <div
+          className="w-full h-full rounded-xl overflow-hidden shadow-2xl shadow-[#F4BB46]/5 border border-[#F4BB46]/10 bg-[#2d3365] relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <div className="w-full h-full">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+                className="w-full h-full"
+              >
+                {project.media[currentIndex]?.type === 'video' ? (
+                  <video
+                    src={project.media[currentIndex].url}
+                    controls
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <img
+                    src={project.media[currentIndex]?.url}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                )}
+              </motion.div>
+            </AnimatePresence>
 
-          {/* Controls Overlay */}
-          <div className={`absolute inset-0 bg-black/20 opacity-0 ${isHovered ? 'opacity-100' : ''} transition-opacity duration-300 flex items-center justify-between px-4`}>
-            <button
-              onClick={prevImage}
-              className="p-2 rounded-full bg-black/60 text-white hover:bg-[#F4BB46] hover:text-[#232757] transition-all transform hover:scale-110"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button
-              onClick={nextImage}
-              className="p-2 rounded-full bg-black/60 text-white hover:bg-[#F4BB46] hover:text-[#232757] transition-all transform hover:scale-110"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </div>
+            {/* Controls Overlay */}
+            <div className={`absolute inset-0 bg-black/20 opacity-0 ${isHovered && project.media.length > 1 ? 'opacity-100' : ''} transition-opacity duration-300 flex items-center justify-between px-4 pointer-events-none`}>
+              <button
+                onClick={prevMedia}
+                className="p-2 rounded-full bg-black/60 text-white hover:bg-[#F4BB46] hover:text-[#232757] transition-all transform hover:scale-110 pointer-events-auto"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={nextMedia}
+                className="p-2 rounded-full bg-black/60 text-white hover:bg-[#F4BB46] hover:text-[#232757] transition-all transform hover:scale-110 pointer-events-auto"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
 
-          {/* Dots */}
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
-            {project.images.map((_, idx) => (
-              <div
-                key={idx}
-                className={`w-2 h-2 rounded-full transition-all shadow-sm ${idx === currentImage ? 'bg-[#F4BB46] w-4' : 'bg-white/60 hover:bg-white'}`}
-              />
-            ))}
+            {/* Dots */}
+            {project.media.length > 1 && (
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+                {project.media.map((_, idx) => (
+                  <div
+                    key={idx}
+                    className={`w-2 h-2 rounded-full transition-all shadow-sm ${idx === currentIndex ? 'bg-[#F4BB46] w-4' : 'bg-white/60 hover:bg-white'}`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
+
+        {/* Project Logo Overlay - Now correctly overlapping the corner */}
+        {project.logoUrl && (
+          <div className="absolute -top-6 -right-6 z-30 transform hover:scale-110 transition-transform duration-300">
+            <div className="w-20 h-20 rounded-full bg-[transparent] p-1 shadow-xl border">
+              <div className="w-full h-full rounded-full bg-black/20 backdrop-blur-md flex items-center justify-center overflow-hidden">
+                <img
+                  src={project.logoUrl}
+                  alt={`${project.title} Logo`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Text Content */}
@@ -202,7 +227,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
           </Button>
         </div>
       </div>
-    </motion.div>
+    </motion.div >
   );
 }
 

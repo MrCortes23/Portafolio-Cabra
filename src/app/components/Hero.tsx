@@ -5,34 +5,56 @@ import { motion, AnimatePresence } from "motion/react";
 import heroImage from "@/assets/goatHero.png";
 import profileImage from "@/assets/profile.png";
 import profileImage2 from "@/assets/profile2.png";
-import { GiGoat } from 'react-icons/gi'
 import { BsWhatsapp } from 'react-icons/bs'
 
 export function Hero() {
-  const [suffixIndex, setSuffixIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setSuffixIndex((prev) => (prev + 1) % 3);
-    }, 2000); // Cambio cada 2 segundos
+  // Typewriter state
+  const [text, setText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
 
-    // Intervalo para alternar imágenes de perfil
+  const words = ["Cabra", "Goat"];
+
+  // Image rotation effect
+  useEffect(() => {
     const imageInterval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % 2);
     }, 5000); // Cambio de imagen cada 5 segundos
-
-    return () => {
-      clearInterval(interval);
-      clearInterval(imageInterval);
-    };
+    return () => clearInterval(imageInterval);
   }, []);
 
-  const suffixes = [
-    { type: "icon", content: <GiGoat className="inline-block" size={24} /> },
-    { type: "text", content: "Cabra" },
-    { type: "text", content: "Goat" },
-  ];
+  // Typewriter effect
+  useEffect(() => {
+    const handleType = () => {
+      const i = loopNum % words.length;
+      const fullText = words[i];
+
+      const currentText = isDeleting
+        ? fullText.substring(0, text.length - 1)
+        : fullText.substring(0, text.length + 1);
+
+      setText(currentText);
+
+      let typeSpeed = isDeleting ? 100 : 150;
+
+      if (!isDeleting && currentText === fullText) {
+        typeSpeed = 2000;
+        setIsDeleting(true);
+      } else if (isDeleting && currentText === '') {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        typeSpeed = 500;
+      }
+
+      setTypingSpeed(typeSpeed);
+    };
+
+    const timer = setTimeout(handleType, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, loopNum, typingSpeed]);
 
   const profileImages = [profileImage, profileImage2];
 
@@ -107,20 +129,10 @@ export function Hero() {
               </div>
               <h2 className="text-2xl font-semibold text-[#F4BB46] tracking-wide flex items-center gap-2 h-8">
                 David Santiago Cortes
-                <div className="relative w-16 text-center">
-                  <AnimatePresence mode="wait">
-                    <motion.span
-                      key={suffixIndex}
-                      initial={{ y: 10, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: -10, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="absolute left-0 right-0 top-1/2 -translate-y-1/2 inline-flex justify-center items-center"
-                    >
-                      {suffixes[suffixIndex].content}
-                    </motion.span>
-                  </AnimatePresence>
-                </div>
+                <span className="relative inline-block min-w-[1ch] text-left">
+                  {text}
+                  <span className="animate-pulse ml-0.5">.</span>
+                </span>
               </h2>
             </motion.div>
 
