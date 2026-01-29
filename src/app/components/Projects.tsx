@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "motion/react";
 interface ProjectMedia {
   type: 'image' | 'video';
   url: string;
+  poster?: string;
 }
 
 interface Project {
@@ -28,7 +29,7 @@ const projects: Project[] = [
     work: "Proyecto personal DOGS",
     description: "Sistema de información y gestión para Guarderia Canina Campestre.",
     media: [
-      { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769570358/doggs1_Hecho_con_Clipchamp_rnzzbw.mp4" },
+      { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769570358/doggs1_Hecho_con_Clipchamp_rnzzbw.mp4", poster: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769644795/d497d254-1162-4375-80a7-d21f6a6da3ca.png" },
       { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769568447/DOGS2_Hecho_con_Clipchamp_1_ame6g3.mp4" },
       { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769568452/Dogs3_Hecho_con_Clipchamp_guegfg.mp4" },
       { type: 'image', url: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769570186/Dise%C3%B1o_sin_t%C3%ADtulo_3_trgtfx.png" },
@@ -42,7 +43,9 @@ const projects: Project[] = [
     title: "Reportes PASTAS",
     work: "Productos Alimenticios Doria S.A.S",
     description: "Sistema colaborativo de gestión de tipos de anomalías/reportes presentados dentro de la planta de producción.",
-    media: [],
+    media: [
+      { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769639209/PASTAS1_Hecho_con_Clipchamp_2_p0eloo.mp4", poster: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769644939/6736b6a9-f865-422a-94fd-3ee24d46d5fa.png" },
+    ],
     tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
     github: "https://github.com/MrCortes23/Unificacion-Data-Pastas-DAVIDCORTES",
     logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
@@ -52,38 +55,46 @@ const projects: Project[] = [
     title: "Sistema de DADAS DE BAJA",
     work: "Productos Alimenticios Doria S.A.S",
     description: "Sistema notificador y aprobador por grupos de correos, generación de solicitudes de baja de productos/elementos.",
-    media: [],
+    media: [
+      { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769640154/DDBJ_Hecho_con_Clipchamp_gdwrhf.mp4", poster: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769645040/92c63ae4-cad4-4a37-8fbf-56e395ee706e.png" },
+    ],
     tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
     github: "https://github.com/MrCortes23/Dadas-de-baja-DAVIDCORTES",
     logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
   },
   {
     id: 4,
-    title: "Sistema de SALIDA DE PRODUCTOS",
-    work: "Pastas Comarrico S.A.S",
-    description: "Sistema de control de salida de productos, estadísticas de salidas, generación de reportes y notificaciones de vencimiento/proximidad por correo electrónico.",
-    media: [],
-    tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
-    github: "https://github.com/MrCortes23/Salida-de-producto-COMARRICO-DAVIDCORTES",
-    logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2UX3iIW0H2ZnPR-OTtRgHUHXPOtth8lOPqQ&s",
-  },
-  {
-    id: 5,
     title: "Protocolo Higiene, Limpieza y Desinfección",
     work: "Productos Alimenticios Doria S.A.S",
     description: "Sistema de verificación y chequeo de cada maquina de producción para realizar el protocolo de higiene, limpieza y desinfección.",
-    media: [],
+    media: [
+      { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769640648/PHLYD_Hecho_con_Clipchamp_srhn2s.mp4", poster: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769645232/0228cd6c-674e-493d-bab4-f572dea617d3.png" },
+    ],
     tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
     github: "https://github.com/MrCortes23/Protocolo-Higiene-Limpieza-y-Desinfeccion-DAVIDCORTES",
     logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
+  },
+  {
+    id: 5,
+    title: "Sistema de SALIDA DE PRODUCTOS",
+    work: "Pastas Comarrico S.A.S",
+    description: "Sistema de control de salida de productos, estadísticas de salidas, generación de reportes y notificaciones de vencimiento/proximidad por correo electrónico.",
+    media: [
+      { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769636594/SDP1_Hecho_con_Clipchamp_r2zxj4.mp4", poster: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769645035/2468cbfa-b145-4c57-a016-3ce2549e6df3.png" },
+    ],
+    tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
+    github: "https://github.com/MrCortes23/Salida-de-producto-COMARRICO-DAVIDCORTES",
+    logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2UX3iIW0H2ZnPR-OTtRgHUHXPOtth8lOPqQ&s",
   },
   {
     id: 6,
     title: "Portafolio CABRA",
     work: "Proyecto personal PORTAFOLIO",
     description: "Portafolio personal para exhibición de proyectos.",
-    media: [],
-    tags: ["React", "Vite", "Tailwind CSS", "TypeScript"],
+    media: [
+      { type: 'image', url: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769641056/Dise%C3%B1o_sin_t%C3%ADtulo_4_u65aev.png" },
+    ],
+    tags: ["React", "Vite", "Tailwind CSS", "TypeScript", "Node.js"],
     github: "https://github.com/MrCortes23/Portafolio-Cabra",
     logoUrl: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769571761/goatabout_yrstid.png",
   }
@@ -135,7 +146,10 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
                 {project.media[currentIndex]?.type === 'video' ? (
                   <video
                     src={project.media[currentIndex].url}
+                    poster={project.media[currentIndex].poster}
                     controls
+                    playsInline
+                    preload="metadata"
                     className="w-full h-full object-cover"
                   />
                 ) : (
@@ -247,7 +261,7 @@ export function Projects() {
           className="text-center mb-16 md:mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-thin text-gray-100 mb-6 tracking-tight">
-            Proyectos <span className="text-[#F4BB46] font-normal">Implementados</span>
+            <span className="font-light">Proyectos </span><span className="text-[#F4BB46] font-medium">Implementados</span>
           </h2>
           <div className="w-80 h-1 bg-[#F4BB46] mx-auto rounded-full mb-6 opacity-60"></div>
           <p className="text-gray-400 max-w-2xl mx-auto text-xl font-light">

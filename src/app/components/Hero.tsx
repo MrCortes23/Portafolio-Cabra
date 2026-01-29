@@ -82,14 +82,14 @@ export function Hero() {
           <div className="max-w-xl w-full">
             {/* Título principal con animación */}
             <motion.h1
-              className="mb-6 text-gray-100 text-3xl md:text-4xl lg:text-4xl text-center font-light"
+              className="mb-6 text-gray-100 text-3xl md:text-4xl lg:text-4xl text-center font-medium"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               Desarrollador de{" "}
               <motion.span
-                className="text-[#F4BB46] relative inline-block font-mono"
+                className="text-[#F4BB46] relative inline-block font-bold"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.6, type: "spring", stiffness: 100 }}
@@ -143,7 +143,7 @@ export function Hero() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              Desarrollando soluciones digitales innovadoras con un diseño centrado en el usuario y su experiencia. Todo es posible con código eficiente.
+              Desarrollando soluciones innovadoras con un diseño centrado en el usuario y su experiencia. Todo es posible con código eficiente.
             </motion.p>
 
             {/* Botones con animación */}

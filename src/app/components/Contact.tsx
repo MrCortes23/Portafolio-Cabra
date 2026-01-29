@@ -13,19 +13,19 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-[#232757]">
+    <section id="contact" className="min-h-screen py-20 px-4 bg-[#232757]">
       <div className="max-w-5xl mx-auto">
         <h2 className="mb-12 text-center text-gray-100">
           Contacto
         </h2>
-        
+
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <p className="text-gray-300 mb-8">
-              ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él. 
+              ¿Tienes un proyecto en mente? Me encantaría escuchar sobre él.
               Envíame un mensaje y hablemos sobre cómo puedo ayudarte.
             </p>
-            
+
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-gray-400">
                 <Mail className="w-5 h-5 text-[#F4BB46]" />
@@ -41,7 +41,7 @@ export function Contact() {
               </div>
             </div>
           </div>
-          
+
           <Card className="bg-[#2d3365] border-[#F4BB46]/20">
             <CardHeader>
               <CardTitle className="text-[#F4BB46]">Envíame un mensaje</CardTitle>
@@ -53,23 +53,23 @@ export function Contact() {
                   <Label htmlFor="name" className="text-gray-300">Nombre</Label>
                   <Input id="name" placeholder="Tu nombre" required className="bg-[#3a4175] border-[#F4BB46]/30 text-gray-200" />
                 </div>
-                
+
                 <div>
                   <Label htmlFor="email" className="text-gray-300">Email</Label>
                   <Input id="email" type="email" placeholder="tu@email.com" required className="bg-[#3a4175] border-[#F4BB46]/30 text-gray-200" />
                 </div>
-                
+
                 <div>
                   <Label htmlFor="message" className="text-gray-300">Mensaje</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Cuéntame sobre tu proyecto..." 
+                  <Textarea
+                    id="message"
+                    placeholder="Cuéntame sobre tu proyecto..."
                     rows={5}
-                    required 
+                    required
                     className="bg-[#3a4175] border-[#F4BB46]/30 text-gray-200"
                   />
                 </div>
-                
+
                 <Button type="submit" className="w-full bg-[#F4BB46] hover:bg-[#e0a830] text-[#232757]">
                   Enviar Mensaje
                 </Button>

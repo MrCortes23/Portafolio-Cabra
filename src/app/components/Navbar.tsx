@@ -10,7 +10,11 @@ const navLinks = [
   { name: "Contacto", href: "#contact" }
 ];
 
-export function Navbar() {
+interface NavbarProps {
+  logoUrl?: string;
+}
+
+export function Navbar({ logoUrl }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const scrollToSection = (href: string) => {
@@ -24,10 +28,30 @@ export function Navbar() {
   return (
     <nav className="fixed top-3 left-0 right-0 z-50 px-4 pt-6">
       <div className="max-w-4xl mx-auto">
-        <div className="bg-[#4a4e6d]/40 backdrop-blur-md rounded-full border border-[#F4BB46]/10 px-8 py-3 shadow-lg">
-          <div className="flex justify-center items-center">
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex gap-12">
+        <div className={`bg-[#4a4e6d]/40 backdrop-blur-md border border-[#F4BB46]/10 px-8 py-3 shadow-lg ${isOpen ? 'rounded-2xl' : 'rounded-full'}`}>
+          <div className="flex justify-between items-center">
+            {/* Logo on the left */}
+            <div className="flex items-center">
+              {logoUrl && (
+                <a
+                  href="#home"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("#home");
+                  }}
+                  className="flex items-center"
+                >
+                  <img
+                    src={logoUrl}
+                    alt="Logo"
+                    className="h-6 w-6 object-contain opacity-90 hover:opacity-100 transition-opacity"
+                  />
+                </a>
+              )}
+            </div>
+
+            {/* Desktop Navigation - Centered */}
+            <div className="hidden md:flex gap-12 flex-1 justify-center">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -43,11 +67,14 @@ export function Navbar() {
               ))}
             </div>
 
+            <div className="hidden md:block" style={{ width: logoUrl ? '24px' : '0' }}></div>
+            <span className="text-[white] transition-colors font-medium md:hidden">CabraDev</span>
+
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden text-[#F4BB46] hover:text-[#f4d03f] absolute right-4"
+              className="md:hidden text-[#F4BB46] hover:text-[#f4d03f]"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -56,7 +83,7 @@ export function Navbar() {
 
           {/* Mobile Navigation */}
           {isOpen && (
-            <div className="md:hidden pt-4 pb-2 border-t border-[#F4BB46]/10 mt-3">
+            <div className="md:hidden pt-2 pb-1 border-t border-[#F4BB46]/10">
               {navLinks.map((link) => (
                 <a
                   key={link.name}

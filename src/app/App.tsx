@@ -9,7 +9,7 @@ import { Footer } from "@/app/components/Footer";
 export default function App() {
   return (
     <div className="min-h-screen bg-[#232757]">
-      <Navbar />
+      <Navbar logoUrl="https://res.cloudinary.com/dxjilnp8x/image/upload/v1769571761/goatabout_yrstid.png" /> {/* Add your logo URL here */}
       <Hero />
       <About />
       <Projects />

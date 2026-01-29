@@ -47,7 +47,7 @@ export function About() {
           viewport={{ once: true }}
         >
           <motion.h2
-            className="text-3xl md:text-5xl font-light text-gray-100 mb-6 flex flex-wrap items-end justify-center md:justify-end gap-3 mt-10"
+            className="text-3xl md:text-5xl font-light text-gray-100 mb-6 flex flex-wrap items-end justify-center md:justify-end gap-3 mt-15"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
