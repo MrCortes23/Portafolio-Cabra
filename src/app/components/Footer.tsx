@@ -1,4 +1,6 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { FaDiscord } from "react-icons/fa";
+import { BsWhatsapp } from 'react-icons/bs'
 
 export function Footer() {
   return (
@@ -31,6 +33,20 @@ export function Footer() {
               aria-label="Email"
             >
               <Mail className="w-6 h-6" />
+            </a>
+            <a
+              href="https://wa.me/573224627101"
+              className="hover:text-[#F4BB46] transition-colors"
+              aria-label="WhatsApp"
+            >
+              <BsWhatsapp className="w-5 h-5" />
+            </a>
+            <a
+              className="hover:text-[#F4BB46] transition-colors"
+              aria-label="Discord"
+            >
+              <FaDiscord className="w-6 h-6" />
+              <span className="text-sm text-gray-400">loyal.bloquee</span>
             </a>
           </div>
         </div>
