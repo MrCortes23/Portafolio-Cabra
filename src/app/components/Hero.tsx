@@ -74,7 +74,7 @@ export function Hero() {
             className="w-full h-full object-cover object-center"
           />
           {/* Overlay gradient para mejor integración */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#232757]/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#232757]/30"></div>
         </motion.div>
 
         {/* Contenido lado derecho */}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, FileText } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
 
 const navLinks = [
@@ -16,6 +16,10 @@ interface NavbarProps {
 
 export function Navbar({ logoUrl }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleDownloadCV = () => {
+    window.open('/cv.pdf', '_blank');
+  };
 
   const scrollToSection = (href: string) => {
     setIsOpen(false);
@@ -68,17 +72,22 @@ export function Navbar({ logoUrl }: NavbarProps) {
             </div>
 
             <div className="hidden md:block" style={{ width: logoUrl ? '24px' : '0' }}></div>
-            <span className="text-[white] transition-colors font-medium md:hidden">CabraDev</span>
+
+            <div className="flex items-center gap-2 md:hidden">
+              <span className="text-[white] transition-colors font-medium">CabraDev</span>
+            </div>
 
             {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden text-[#F4BB46] hover:text-[#f4d03f]"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </Button>
+            <div className="flex items-center gap-2 md:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-[#F4BB46] hover:text-[#f4d03f]"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Navigation */}
@@ -97,6 +106,17 @@ export function Navbar({ logoUrl }: NavbarProps) {
                   {link.name}
                 </a>
               ))}
+              <hr className="border-[#F4BB46]/10 my-2" />
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  handleDownloadCV();
+                }}
+                className="w-full flex items-center justify-center gap-2 py-2 text-[#F4BB46] hover:text-[#f4d03f] transition-colors font-semibold"
+              >
+                <FileText className="w-4 h-4" />
+                Descarga mi CV
+              </button>
             </div>
           )}
         </div>

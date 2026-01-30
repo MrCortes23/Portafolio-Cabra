@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-[#232757] border-t border-[#F4BB46]/20 text-gray-300 py-12 px-4">
+    <footer className="bg-[#2d3365] border-t border-[#F4BB46]/20 text-gray-300 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
@@ -12,21 +12,21 @@ export function Footer() {
 
           <div className="flex gap-6">
             <a
-              href="#"
+              href="https://github.com/MrCortes23"
               className="hover:text-[#F4BB46] transition-colors"
               aria-label="GitHub"
             >
               <Github className="w-6 h-6" />
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/davidcortescabra23"
               className="hover:text-[#F4BB46] transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-6 h-6" />
             </a>
             <a
-              href="#"
+              href="mailto:cabrasantiagocortes@gmail.com"
               className="hover:text-[#F4BB46] transition-colors"
               aria-label="Email"
             >
@@ -36,7 +36,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-[#F4BB46]/20 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Portafolio. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} - David Santiago Cortes Cabra - Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
