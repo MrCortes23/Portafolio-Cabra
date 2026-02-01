@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
 import { motion, AnimatePresence } from "motion/react";
-import heroImage from "@/assets/goatHero.png";
+import heroImage from "@/assets/goathero.png";
 import profileImage from "@/assets/profile.png";
 import profileImage2 from "@/assets/profile2.png";
 import { BsWhatsapp } from 'react-icons/bs'

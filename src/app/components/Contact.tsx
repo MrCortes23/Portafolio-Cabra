@@ -6,7 +6,7 @@ import { Textarea } from "@/app/components/ui/textarea";
 import { Label } from "@/app/components/ui/label";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "motion/react";
-import contactImage from "@/assets/contactImage.png";
+import contactImage from "@/assets/contactimage.png";
 
 export function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
