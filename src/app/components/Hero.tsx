@@ -59,7 +59,7 @@ export function Hero() {
   const profileImages = [profileImage, profileImage2];
 
   return (
-    <section id="home" className="min-h-screen flex items-center overflow-hidden relative">
+    <section id="home" className="h-screen mt-5 flex items-center overflow-hidden relative">
       <div className="w-full h-full flex">
         {/* Imagen lado izquierdo - ocupa todo el lateral con animación */}
         <motion.div
