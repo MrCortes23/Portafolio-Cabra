@@ -1,5 +1,5 @@
 import React from 'react';
-import goatAbout from "@/assets/goatAbout.svg";
+import goatabout from "@/assets/goatabout.svg";
 
 // Ahora el componente acepta props para ajustar el tamaño según donde lo uses
 export const DavidLogo = ({
@@ -19,7 +19,7 @@ export const DavidLogo = ({
             <span className="relative flex flex-col items-center justify-end mx-px">
 
                 {/* SVG de la Cabra */}
-                <img src={goatAbout} alt="Goat" className={`absolute ${goatTop} ${goatSize} z-10`} />
+                <img src={goatabout} alt="Goat" className={`absolute ${goatTop} ${goatSize} z-10`} />
 
                 {/* Letra 'a' */}
                 <span className="z-0">a</span>
