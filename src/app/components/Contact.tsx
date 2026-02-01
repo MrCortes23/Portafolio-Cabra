@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/app/components/ui/button";
 import { Input } from "@/app/components/ui/input";
 import { Textarea } from "@/app/components/ui/textarea";
@@ -7,10 +9,49 @@ import { motion } from "motion/react";
 import contactImage from "@/assets/contactImage.png";
 
 export function Contact() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica de envío del formulario
-    alert("Funcionalidad de contacto pendiente de implementar");
+    setIsSubmitting(true);
+    setIsSuccess(false);
+
+    const promise = fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    toast.promise(promise, {
+      loading: 'Enviando mensaje...',
+      success: (data) => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", message: "" });
+
+        // El botón volverá a su estado normal después de 3 segundos
+        setTimeout(() => setIsSuccess(false), 3000);
+
+        return '¡Mensaje enviado con éxito! Me pondré en contacto pronto.';
+      },
+      error: (err) => {
+        setIsSubmitting(false);
+        return 'Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+      },
+    });
   };
 
   return (
@@ -74,6 +115,8 @@ export function Contact() {
                     id="name"
                     placeholder="Tu nombre"
                     required
+                    value={formData.name}
+                    onChange={handleChange}
                     className="bg-[#3a4175] border-[#F4BB46]/30 text-gray-200 focus:border-[#F4BB46] transition-colors mt-3"
                   />
                 </div>
@@ -85,6 +128,8 @@ export function Contact() {
                     type="email"
                     placeholder="tu@email.com"
                     required
+                    value={formData.email}
+                    onChange={handleChange}
                     className="bg-[#3a4175] border-[#F4BB46]/30 text-gray-200 focus:border-[#F4BB46] transition-colors mt-3"
                   />
                 </div>
@@ -96,15 +141,18 @@ export function Contact() {
                     placeholder="Comentario..."
                     rows={5}
                     required
+                    value={formData.message}
+                    onChange={handleChange}
                     className="bg-[#3a4175] border-[#F4BB46]/30 text-gray-200 focus:border-[#F4BB46] transition-colors resize-none mt-3"
                   />
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full bg-[#F4BB46] hover:bg-[#e0a830] text-[#232757] font-medium shadow-lg shadow-[#F4BB46]/20 hover:shadow-[#F4BB46]/40 transition-all"
+                  disabled={isSubmitting || isSuccess}
+                  className="w-full bg-[#F4BB46] hover:bg-[#e0a830] text-[#232757] font-medium shadow-lg shadow-[#F4BB46]/20 hover:shadow-[#F4BB46]/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Enviar Mensaje
+                  {isSubmitting ? "Enviando..." : isSuccess ? "¡Enviado con éxito!" : "Enviar Mensaje"}
                 </Button>
               </form>
             </motion.div>

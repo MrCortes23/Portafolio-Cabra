@@ -156,7 +156,7 @@ export function Hero() {
               <Button
                 size="lg"
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-[#F4BB46] hover:bg-[#e0a830] text-[#232757] font-medium shadow-lg shadow-[#F4BB46]/20 hover:shadow-[#F4BB46]/40 transition-all"
+                className="cursor-pointer bg-[#F4BB46] hover:bg-[#e0a830] text-[#232757] font-medium shadow-lg shadow-[#F4BB46]/20 hover:shadow-[#F4BB46]/40 transition-all"
               >
                 Ver Proyectos
               </Button>
@@ -164,7 +164,7 @@ export function Hero() {
                 variant="outline"
                 size="lg"
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="border-[#F4BB46]/50 text-[#F4BB46] hover:bg-[#F4BB46] hover:text-[#232757] font-medium transition-all"
+                className="cursor-pointer border-[#F4BB46]/50 text-[#F4BB46] hover:bg-[#F4BB46] hover:text-[#232757] font-medium transition-all"
               >
                 Contactar
               </Button>

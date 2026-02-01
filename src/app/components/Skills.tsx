@@ -18,7 +18,12 @@ export function Skills() {
     { name: "AppScript", url: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_Apps_Script.svg/1280px-Google_Apps_Script.svg.png?20221103122014" },
     { name: "Bash", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" },
     { name: "Vercel", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" },
-    { name: "Postman", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" }
+    { name: "Postman", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
+    { name: "GitHub", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+    { name: "Figma", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+    { name: "Windsurf", url: "https://exafunction.github.io/public/brand/windsurf-black-symbol.svg" },
+    { name: "Antigravity", url: "https://brandlogos.net/wp-content/uploads/2025/12/google_antigravity-logo_brandlogos.net_qu4jc.png" },
+    { name: "VsCode", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" }
   ];
 
   // Split logos into two rows
@@ -67,7 +72,7 @@ export function Skills() {
               </span>
             </h2>
             <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light">
-              Herramientas y tecnologías que he utilizado y tengo conocimiento
+              Herramientas / Tecnologías que he utilizado y tengo conocimiento
             </p>
           </div>
         </div>

@@ -17,7 +17,7 @@ export function FloatingCV() {
         >
             <button
                 onClick={handleDownload}
-                className="group relative flex items-center justify-center w-14 h-14 bg-[#2d3365]/80 backdrop-blur-md border border-[#F4BB46]/30 rounded-full shadow-2xl hover:border-[#F4BB46] transition-all duration-300 active:scale-95"
+                className="cursor-pointer group relative flex items-center justify-center w-14 h-14 bg-[#2d3365]/80 backdrop-blur-md border border-[#F4BB46]/30 rounded-full shadow-2xl hover:border-[#F4BB46] transition-all duration-300 active:scale-95"
                 title="Descargar CV"
             >
                 <FileText className="w-6 h-6 text-[#F4BB46] group-hover:scale-110 transition-transform" />

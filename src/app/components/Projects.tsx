@@ -92,7 +92,7 @@ const projects: Project[] = [
     work: "Proyecto personal PORTAFOLIO",
     description: "Portafolio personal para exhibición de proyectos.",
     media: [
-      { type: 'image', url: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769641056/Dise%C3%B1o_sin_t%C3%ADtulo_4_u65aev.png" },
+      { type: 'image', url: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769913155/Dise%C3%B1o_sin_t%C3%ADtulo_4_kvwsgd.png" },
     ],
     tags: ["React", "Vite", "Tailwind CSS", "TypeScript", "Node.js"],
     github: "https://github.com/MrCortes23/Portafolio-Cabra",
