@@ -63,7 +63,7 @@ export function Hero() {
       <div className="w-full h-full flex">
         {/* Imagen lado izquierdo - ocupa todo el lateral con animación */}
         <motion.div
-          className="hidden md:flex md:w-[60%] md:-mr-[10%] relative z-10"
+          className="hidden md:flex md:w-[60%] md:-mr-[10%] relative z-10 will-change-transform"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -82,7 +82,7 @@ export function Hero() {
           <div className="max-w-xl w-full">
             {/* Título principal con animación */}
             <motion.h1
-              className="mb-6 text-gray-100 text-3xl md:text-4xl lg:text-4xl text-center font-medium"
+              className="mb-6 text-gray-100 text-3xl md:text-4xl lg:text-4xl text-center font-medium will-change-transform"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
@@ -108,7 +108,7 @@ export function Hero() {
 
             {/* Foto de Perfil y Nombre */}
             <motion.div
-              className="flex flex-col items-center mb-8"
+              className="flex flex-col items-center mb-8 will-change-transform"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
@@ -138,7 +138,7 @@ export function Hero() {
 
             {/* Descripción con animación */}
             <motion.p
-              className="text-lg text-gray-400 mb-10 leading-relaxed text-center"
+              className="text-lg text-gray-400 mb-10 leading-relaxed text-center will-change-transform"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
@@ -148,7 +148,7 @@ export function Hero() {
 
             {/* Botones con animación */}
             <motion.div
-              className="flex gap-4 mb-10 justify-center"
+              className="flex gap-4 mb-10 justify-center will-change-transform"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
@@ -172,7 +172,7 @@ export function Hero() {
 
             {/* Redes sociales con animación */}
             <motion.div
-              className="flex gap-4 justify-center"
+              className="flex gap-4 justify-center will-change-transform"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.6 }}
