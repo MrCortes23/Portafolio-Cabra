@@ -67,7 +67,7 @@ export function About() {
               Tecnólogo en <span className="text-[#F4BB46] font-medium"> Análisis y Desarrollo de Software</span>, estudiante de <span className="text-[white] font-medium">Ingeniería de Software</span> con alta motivación y proactividad para gestionar las diferentes situaciones que sean propuestas, comprometido en brindar soluciones efectivas, con excelente adaptación para trabajar en equipo, toma de decisiones estratégicas y optimización de procesos para alcanzar resultados.
             </p>
             <p>
-              Me centro en escribir código eficiente, siempre buscando la mejor solución para cada problema. Me mantengo actualizado y en orden con las tecnologías que esten a disposición para ofrecer adaptabilidad.
+              Me centro en desarrollar código eficiente, siempre buscando la mejor solución para cada problema. Me mantengo actualizado y en orden con las tecnologías que esten a disposición para ofrecer adaptabilidad.
             </p>
           </div>
 

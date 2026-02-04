@@ -59,7 +59,7 @@ export function Hero() {
   const profileImages = [profileImage, profileImage2];
 
   return (
-    <section id="home" className="h-screen mt-5 flex items-center overflow-hidden relative">
+    <section id="home" className="min-h-screen flex items-center overflow-x-hidden relative py-20 md:py-0">
       <div className="w-full h-full flex">
         {/* Imagen lado izquierdo - ocupa todo el lateral con animación */}
         <motion.div
@@ -78,7 +78,7 @@ export function Hero() {
         </motion.div>
 
         {/* Contenido lado derecho */}
-        <div className="w-full md:w-1/2 h-full flex items-center justify-center px-8 md:px-12 lg:px-20 py-12 relative mt-12">
+        <div className="w-full md:w-1/2 h-full flex items-center justify-center px-8 md:px-12 lg:px-20 py-12 relative mt-8 md:mt-25">
           <div className="max-w-xl w-full">
             {/* Título principal con animación */}
             <motion.h1
@@ -127,7 +127,7 @@ export function Hero() {
                   />
                 </AnimatePresence>
               </div>
-              <h2 className="text-2xl font-semibold text-[#F4BB46] tracking-wide flex items-center gap-2 h-8">
+              <h2 className="text-xl md:text-2xl font-semibold text-[#F4BB46] tracking-wide flex flex-col md:flex-row items-center gap-1 md:gap-2 text-center">
                 David Santiago Cortes
                 <span className="relative inline-block min-w-[1ch] text-left">
                   {text}
