@@ -18,7 +18,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDownloadCV = () => {
-    window.open('/cv.pdf', '_blank');
+    window.open('/cv-DavidCortes.pdf', '_blank');
   };
 
   const scrollToSection = (href: string) => {
