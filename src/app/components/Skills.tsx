@@ -23,7 +23,8 @@ export function Skills() {
     { name: "Figma", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
     { name: "Windsurf", url: "https://exafunction.github.io/public/brand/windsurf-black-symbol.svg" },
     { name: "Antigravity", url: "https://brandlogos.net/wp-content/uploads/2025/12/google_antigravity-logo_brandlogos.net_qu4jc.png" },
-    { name: "VsCode", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" }
+    { name: "VsCode", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+    { name: "MySQL", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" }
   ];
 
   // Split logos into two rows

@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 export function FloatingCV() {
     const handleDownload = () => {
-        window.open('/cv.pdf', '_blank');
+        window.open('/cv-DavidCortes.pdf', '_blank');
     };
 
     return (

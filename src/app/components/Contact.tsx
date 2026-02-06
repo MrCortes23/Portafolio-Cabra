@@ -97,7 +97,7 @@ export function Contact() {
               </div>
               <div className="flex items-center gap-3 text-gray-400 justify-center md:justify-start">
                 <MapPin className="w-5 h-5 text-[#F4BB46]" />
-                <span>Colombia</span>
+                <span>Bogotá, Colombia</span>
               </div>
             </motion.div>
 
