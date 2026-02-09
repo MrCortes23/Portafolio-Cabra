@@ -7,8 +7,10 @@ import { Label } from "@/app/components/ui/label";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "motion/react";
 import contactImage from "@/assets/contactImage.png";
+import { useTranslation } from "@/app/context/TranslationContext";
 
 export function Contact() {
+  const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState({
@@ -45,11 +47,11 @@ export function Contact() {
         // El botón volverá a su estado normal después de 3 segundos
         setTimeout(() => setIsSuccess(false), 3000);
 
-        return '¡Mensaje enviado con éxito! Me pondré en contacto pronto.';
+        return t('contact.successMessage');
       },
       error: (err) => {
         setIsSubmitting(false);
-        return 'Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo.';
+        return t('contact.errorMessage');
       },
     });
   };
@@ -65,8 +67,8 @@ export function Contact() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Contacta
-              <span className="text-[#F4BB46] font-bold">meeeh</span>
+              {t('contact.title')}
+              <span className="text-[#F4BB46] font-bold">{t('contact.titleHighlight')}</span>
             </motion.h2>
 
             {/* Descripción con animación */}
@@ -76,8 +78,8 @@ export function Contact() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              ¿Meeeeh quieres proponer algo? <br></br>
-              Envíame un mensaje y trabajemos juntos.
+              {t('contact.description1')} <br></br>
+              {t('contact.description2')}
             </motion.p>
 
             {/* Información de contacto con animación */}
@@ -110,10 +112,10 @@ export function Contact() {
             >
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <Label htmlFor="name" className="text-gray-300">Nombre</Label>
+                  <Label htmlFor="name" className="text-gray-300">{t('contact.nameLabel')}</Label>
                   <Input
                     id="name"
-                    placeholder="Tu nombre"
+                    placeholder={t('contact.namePlaceholder')}
                     required
                     value={formData.name}
                     onChange={handleChange}
@@ -122,11 +124,11 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <Label htmlFor="email" className="text-gray-300">Email</Label>
+                  <Label htmlFor="email" className="text-gray-300">{t('contact.emailLabel')}</Label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="tu@email.com"
+                    placeholder={t('contact.emailPlaceholder')}
                     required
                     value={formData.email}
                     onChange={handleChange}
@@ -135,10 +137,10 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <Label htmlFor="message" className="text-gray-300">Mensaje</Label>
+                  <Label htmlFor="message" className="text-gray-300">{t('contact.messageLabel')}</Label>
                   <Textarea
                     id="message"
-                    placeholder="Comentario..."
+                    placeholder={t('contact.messagePlaceholder')}
                     rows={5}
                     required
                     value={formData.message}
@@ -152,7 +154,7 @@ export function Contact() {
                   disabled={isSubmitting || isSuccess}
                   className="w-full bg-[#F4BB46] hover:bg-[#e0a830] text-[#232757] font-medium shadow-lg shadow-[#F4BB46]/20 hover:shadow-[#F4BB46]/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? "Enviando..." : isSuccess ? "¡Enviado con éxito!" : "Enviar Mensaje"}
+                  {isSubmitting ? t('contact.sending') : isSuccess ? t('contact.success') : t('contact.sendButton')}
                 </Button>
               </form>
             </motion.div>

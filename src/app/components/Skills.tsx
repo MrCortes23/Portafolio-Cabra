@@ -1,4 +1,7 @@
+import { useTranslation } from "@/app/context/TranslationContext";
+
 export function Skills() {
+  const { t } = useTranslation();
   // Technology logos with their respective URLs
   const techLogos = [
     { name: "React", url: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
@@ -38,7 +41,7 @@ export function Skills() {
           {/* Title with integrated icon */}
           <div className="text-center">
             <h2 className="text-4xl md:text-6xl font-light text-gray-100 mb-3 tracking-tight flex items-center justify-center gap-2 flex-wrap">
-              <span>Habilidades /</span>
+              <span>{t('skills.title1')}</span>
               <span className="text-[#F4BB46] font-bold flex items-center">
                 Tecn
                 <svg
@@ -73,7 +76,7 @@ export function Skills() {
               </span>
             </h2>
             <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light">
-              Herramientas / Tecnologías que he utilizado y tengo conocimiento
+              {t('skills.description')}
             </p>
           </div>
         </div>

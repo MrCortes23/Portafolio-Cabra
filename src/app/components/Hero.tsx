@@ -6,8 +6,10 @@ import heroImage from "@/assets/goathero.png";
 import profileImage from "@/assets/profile.png";
 import profileImage2 from "@/assets/profile2.png";
 import { BsWhatsapp } from 'react-icons/bs'
+import { useTranslation } from "@/app/context/TranslationContext";
 
 export function Hero() {
+  const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Typewriter state
@@ -16,7 +18,7 @@ export function Hero() {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const words = ["Cabra", "Goat"];
+  const words = t('hero.words');
 
   // Image rotation effect
   useEffect(() => {
@@ -87,14 +89,14 @@ export function Hero() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Desarrollador de{" "}
+              {t('hero.title')}{" "}
               <motion.span
                 className="text-[#F4BB46] relative inline-block font-bold"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, duration: 0.6, type: "spring", stiffness: 100 }}
               >
-                Software
+                {t('hero.titleHighlight')}
                 <motion.span
                   initial={{ opacity: 0 }}
                   animate={{ opacity: [0, 1, 0] }}
@@ -143,7 +145,7 @@ export function Hero() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              Desarrollando soluciones innovadoras con un diseño centrado en el usuario y su experiencia. Todo es posible con código eficiente.
+              {t('hero.description')}
             </motion.p>
 
             {/* Botones con animación */}
@@ -158,7 +160,7 @@ export function Hero() {
                 onClick={() => document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' })}
                 className="cursor-pointer bg-[#F4BB46] hover:bg-[#e0a830] text-[#232757] font-medium shadow-lg shadow-[#F4BB46]/20 hover:shadow-[#F4BB46]/40 transition-all"
               >
-                Ver Proyectos
+                {t('hero.viewProjects')}
               </Button>
               <Button
                 variant="outline"
@@ -166,7 +168,7 @@ export function Hero() {
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="cursor-pointer border-[#F4BB46]/50 text-[#F4BB46] hover:bg-[#F4BB46] hover:text-[#232757] font-medium transition-all"
               >
-                Contactar
+                {t('hero.contactButton')}
               </Button>
             </motion.div>
 

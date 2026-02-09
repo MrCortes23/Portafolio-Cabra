@@ -7,19 +7,22 @@ import { Contact } from "@/app/components/Contact";
 import { Footer } from "@/app/components/Footer";
 import { FloatingCV } from "@/app/components/FloatingCV";
 import EntranceAnimation from "@/app/components/EntranceAnimation";
+import { TranslationProvider } from "@/app/context/TranslationContext";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#232757]">
-      <EntranceAnimation />
-      <Navbar logoUrl="https://res.cloudinary.com/dxjilnp8x/image/upload/v1769571761/goatabout_yrstid.png" /> {/* Add your logo URL here */}
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
-      <Footer />
-      <FloatingCV />
-    </div>
+    <TranslationProvider>
+      <div className="min-h-screen bg-[#232757]">
+        <EntranceAnimation />
+        <Navbar logoUrl="https://res.cloudinary.com/dxjilnp8x/image/upload/v1769571761/goatabout_yrstid.png" /> {/* Add your logo URL here */}
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+        <Footer />
+        <FloatingCV />
+      </div>
+    </TranslationProvider>
   );
 }

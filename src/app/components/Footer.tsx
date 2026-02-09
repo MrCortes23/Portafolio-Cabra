@@ -1,15 +1,17 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { FaDiscord } from "react-icons/fa";
 import { BsWhatsapp } from 'react-icons/bs'
+import { useTranslation } from "@/app/context/TranslationContext";
 
 export function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="bg-[#2d3365] border-t border-[#F4BB46]/20 text-gray-300 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <h3 className="text-xl text-[#F4BB46] mb-2">David Santiago Cortes Cabra</h3>
-            <p className="text-sm text-gray-400">Desarrollador de Software</p>
+            <p className="text-sm text-gray-400">{t('footer.role')}</p>
           </div>
 
           <div className="flex gap-6">
@@ -52,7 +54,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-[#F4BB46]/20 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} - David Santiago Cortes Cabra - Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} - David Santiago Cortes Cabra - {t('footer.rights')}</p>
         </div>
       </div>
     </footer>

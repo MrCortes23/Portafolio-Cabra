@@ -3,6 +3,7 @@ import { Badge } from "@/app/components/ui/badge";
 import { Button } from "@/app/components/ui/button";
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { useTranslation } from "@/app/context/TranslationContext";
 
 
 interface ProjectMedia {
@@ -101,6 +102,7 @@ const projects: Project[] = [
 ];
 
 function ProjectRow({ project, index }: { project: Project; index: number }) {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const isAlt = index % 2 !== 0;
@@ -236,7 +238,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
           <Button size="lg" variant="outline" asChild className="border-[#F4BB46]/50 text-gray-300 hover:bg-[#F4BB46] hover:text-[#232757] transition-all min-w-[120px]">
             <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 justify-center">
               <Github className="w-5 h-5" />
-              <span>Repositorio</span>
+              <span>{t('projects.repository')}</span>
             </a>
           </Button>
         </div>
@@ -246,6 +248,85 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
 }
 
 export function Projects() {
+  const { t } = useTranslation();
+
+  const projectsData: Project[] = [
+    {
+      id: 1,
+      title: t('projects.projectsList.dogs.title'),
+      work: t('projects.projectsList.dogs.work'),
+      description: t('projects.projectsList.dogs.description'),
+      media: [
+        { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769570358/doggs1_Hecho_con_Clipchamp_rnzzbw.mp4", poster: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769644795/d497d254-1162-4375-80a7-d21f6a6da3ca.png" },
+        { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769568447/DOGS2_Hecho_con_Clipchamp_1_ame6g3.mp4" },
+        { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769568452/Dogs3_Hecho_con_Clipchamp_guegfg.mp4" },
+        { type: 'image', url: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769570186/Dise%C3%B1o_sin_t%C3%ADtulo_3_trgtfx.png" },
+      ],
+      tags: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+      github: "https://github.com/MrCortes23/DOGSv2",
+      logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAdOFgj2N1FUDMQjCRJkBWCxLkdKKfK-XHeQ&s",
+    },
+    {
+      id: 2,
+      title: t('projects.projectsList.pastas.title'),
+      work: t('projects.projectsList.pastas.work'),
+      description: t('projects.projectsList.pastas.description'),
+      media: [
+        { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769639209/PASTAS1_Hecho_con_Clipchamp_2_p0eloo.mp4", poster: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769644939/6736b6a9-f865-422a-94fd-3ee24d46d5fa.png" },
+      ],
+      tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
+      github: "https://github.com/MrCortes23/Unificacion-Data-Pastas-DAVIDCORTES",
+      logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
+    },
+    {
+      id: 3,
+      title: t('projects.projectsList.dadas.title'),
+      work: t('projects.projectsList.dadas.work'),
+      description: t('projects.projectsList.dadas.description'),
+      media: [
+        { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769640154/DDBJ_Hecho_con_Clipchamp_gdwrhf.mp4", poster: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769645040/92c63ae4-cad4-4a37-8fbf-56e395ee706e.png" },
+      ],
+      tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
+      github: "https://github.com/MrCortes23/Dadas-de-baja-DAVIDCORTES",
+      logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
+    },
+    {
+      id: 4,
+      title: t('projects.projectsList.phlyd.title'),
+      work: t('projects.projectsList.phlyd.work'),
+      description: t('projects.projectsList.phlyd.description'),
+      media: [
+        { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769640648/PHLYD_Hecho_con_Clipchamp_srhn2s.mp4", poster: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769645232/0228cd6c-674e-493d-bab4-f572dea617d3.png" },
+      ],
+      tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
+      github: "https://github.com/MrCortes23/Protocolo-Higiene-Limpieza-y-Desinfeccion-DAVIDCORTES",
+      logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
+    },
+    {
+      id: 5,
+      title: t('projects.projectsList.salida.title'),
+      work: t('projects.projectsList.salida.work'),
+      description: t('projects.projectsList.salida.description'),
+      media: [
+        { type: 'video', url: "https://res.cloudinary.com/dxjilnp8x/video/upload/v1769636594/SDP1_Hecho_con_Clipchamp_r2zxj4.mp4", poster: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769645035/2468cbfa-b145-4c57-a016-3ce2549e6df3.png" },
+      ],
+      tags: ["Google Apps Script", "Google Sheets", "HTML", "CSS", "JavaScript", "CLASP"],
+      github: "https://github.com/MrCortes23/Salida-de-producto-COMARRICO-DAVIDCORTES",
+      logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2UX3iIW0H2ZnPR-OTtRgHUHXPOtth8lOPqQ&s",
+    },
+    {
+      id: 6,
+      title: t('projects.projectsList.portfolio.title'),
+      work: t('projects.projectsList.portfolio.work'),
+      description: t('projects.projectsList.portfolio.description'),
+      media: [
+        { type: 'image', url: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769913155/Dise%C3%B1o_sin_t%C3%ADtulo_4_kvwsgd.png" },
+      ],
+      tags: ["React", "Vite", "Tailwind CSS", "TypeScript", "Node.js"],
+      github: "https://github.com/MrCortes23/Portafolio-Cabra",
+      logoUrl: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769571761/goatabout_yrstid.png",
+    }
+  ];
   return (
     <section id="projects" className="min-h-screen py-32 px-6 md:px-12 lg:px-20 bg-[#232757] relative overflow-hidden">
       {/* Background Elements */}
@@ -261,16 +342,16 @@ export function Projects() {
           className="text-center mb-16 md:mb-16"
         >
           <h2 className="text-4xl md:text-6xl font-thin text-gray-100 mb-6 tracking-tight">
-            <span className="font-light">Proyectos </span><span className="text-[#F4BB46] font-medium">Implementados</span>
+            <span className="font-light">{t('projects.title1')} </span><span className="text-[#F4BB46] font-medium">{t('projects.title2')}</span>
           </h2>
           <div className="w-80 h-1 bg-[#F4BB46] mx-auto rounded-full mb-6 opacity-60"></div>
           <p className="text-gray-400 max-w-2xl mx-auto text-xl font-light">
-            Proyectos <span className="text-white">desarrollados</span> personalmente y laboralmente.
+            {t('projects.title1')} <span className="text-white">{t('projects.description2')}</span> {t('projects.description').toLowerCase().split('desarrollados')[1]}
           </p>
         </motion.div>
 
         <div className="flex flex-col gap-12">
-          {projects.map((project, index) => (
+          {projectsData.map((project, index) => (
             <ProjectRow key={project.id} project={project} index={index} />
           ))}
         </div>

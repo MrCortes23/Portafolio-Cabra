@@ -1,14 +1,8 @@
 import { useState } from "react";
 import { Menu, X, FileText } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
-
-const navLinks = [
-  { name: "Inicio", href: "#home" },
-  { name: "Sobre David", href: "#about" },
-  { name: "Proyectos", href: "#projects" },
-  { name: "Habilidades", href: "#skills" },
-  { name: "Contacto", href: "#contact" }
-];
+import { useTranslation } from "@/app/context/TranslationContext";
+import { LanguageToggle } from "@/app/components/ui/LanguageToggle";
 
 interface NavbarProps {
   logoUrl?: string;
@@ -16,6 +10,15 @@ interface NavbarProps {
 
 export function Navbar({ logoUrl }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
+
+  const navLinks = [
+    { name: t('navbar.home'), href: "#home" },
+    { name: t('navbar.about'), href: "#about" },
+    { name: t('navbar.projects'), href: "#projects" },
+    { name: t('navbar.skills'), href: "#skills" },
+    { name: t('navbar.contact'), href: "#contact" }
+  ];
 
   const handleDownloadCV = () => {
     window.open('/cv-DavidCortes.pdf', '_blank');
@@ -34,8 +37,8 @@ export function Navbar({ logoUrl }: NavbarProps) {
       <div className="max-w-4xl mx-auto">
         <div className={`bg-[#4a4e6d]/40 backdrop-blur-md border border-[#F4BB46]/10 px-8 py-3 shadow-lg ${isOpen ? 'rounded-2xl' : 'rounded-full'}`}>
           <div className="flex justify-between items-center">
-            {/* Logo on the left */}
-            <div className="flex items-center">
+            {/* Logo on the left - Fixed width container */}
+            <div className="flex items-center min-w-[40px]">
               {logoUrl && (
                 <a
                   href="#home"
@@ -71,10 +74,13 @@ export function Navbar({ logoUrl }: NavbarProps) {
               ))}
             </div>
 
-            <div className="hidden md:block" style={{ width: logoUrl ? '24px' : '0' }}></div>
+            {/* Language Toggle - Desktop Right Side - Fixed width container matching left */}
+            <div className="hidden md:flex items-center justify-end min-w-[40px]">
+              <LanguageToggle />
+            </div>
 
             <div className="flex items-center gap-2 md:hidden">
-              <span className="text-[white] transition-colors font-medium">CabraDev</span>
+              <span className="text-[white] transition-colors font-medium">{t('navbar.brand')}</span>
             </div>
 
             {/* Mobile Menu Button */}
@@ -115,8 +121,12 @@ export function Navbar({ logoUrl }: NavbarProps) {
                 className="w-full flex items-center justify-center gap-2 py-2 text-[#F4BB46] hover:text-[#f4d03f] transition-colors font-semibold"
               >
                 <FileText className="w-4 h-4" />
-                Descarga mi CV
+                {t('navbar.downloadCV')}
               </button>
+              <hr className="border-[#F4BB46]/10 my-2" />
+              <div className="flex justify-center py-2">
+                <LanguageToggle />
+              </div>
             </div>
           )}
         </div>

@@ -2,26 +2,29 @@ import { motion } from "motion/react";
 import { Code, Server, Users } from "lucide-react";
 import { MatrixRain } from "./ui/MatrixRain";
 import { DavidLogo } from "./ui/david";
+import { useTranslation } from "@/app/context/TranslationContext";
 
 export function About() {
+  const { t } = useTranslation();
+
   const stats = [
     {
       icon: <Code className="w-6 h-6 text-[#F4BB46]" />,
-      title: "Experiencia",
-      value: "6+ Meses",
-      desc: "Desarrollo Full Stack / Automatizaciones"
+      title: t('about.stats.experience.title'),
+      value: t('about.stats.experience.value'),
+      desc: t('about.stats.experience.desc')
     },
     {
       icon: <Server className="w-6 h-6 text-[#F4BB46]" />,
-      title: "Proyectos",
-      value: "6+",
-      desc: "Supliendo necesidades y dando resultados"
+      title: t('about.stats.projects.title'),
+      value: t('about.stats.projects.value'),
+      desc: t('about.stats.projects.desc')
     },
     {
       icon: <Users className="w-6 h-6 text-[#F4BB46]" />,
-      title: "Clientes",
-      value: "Optimización",
-      desc: "Satisfechos y optimizados por sistemas"
+      title: t('about.stats.clients.title'),
+      value: t('about.stats.clients.value'),
+      desc: t('about.stats.clients.desc')
     }
   ];
 
@@ -53,7 +56,7 @@ export function About() {
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <span>Sobre</span>
+            <span>{t('about.title')}</span>
             {/* Insertamos el logo pasando las props para ajustarlo al título */}
             <DavidLogo
               textSize="text-3xl md:text-5xl"
@@ -64,10 +67,10 @@ export function About() {
 
           <div className="space-y-6 text-gray-300 md:text-gray-400 text-lg leading-relaxed mb-10 text-center md:text-right">
             <p>
-              Tecnólogo en <span className="text-[#F4BB46] font-medium"> Análisis y Desarrollo de Software</span>, estudiante de <span className="text-[white] font-medium">Ingeniería de Software</span> con alta motivación y proactividad para gestionar las diferentes situaciones que sean propuestas, comprometido en brindar soluciones efectivas, con excelente adaptación para trabajar en equipo, toma de decisiones estratégicas y optimización de procesos para alcanzar resultados.
+              {t('about.description1')}
             </p>
             <p>
-              Me centro en desarrollar código eficiente, siempre buscando la mejor solución para cada problema. Me mantengo actualizado y en orden con las tecnologías que esten a disposición para ofrecer adaptabilidad.
+              {t('about.description2')}
             </p>
           </div>
 
