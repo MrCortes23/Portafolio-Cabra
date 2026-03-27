@@ -56,6 +56,11 @@ export const translations = {
           work: "Proyecto personal DOGS",
           description: "Sistema de información y gestión para Guarderia Canina Campestre."
         },
+        dogspuntocero: {
+          title: "DOGSpuntocero",
+          work: "Proyecto personal DOGSpuntocero, chatbot con IA",
+          description: "Landing page sobre caninos."
+        },
         pastas: {
           title: "Reportes PASTAS",
           work: "Productos Alimenticios Doria S.A.S",
@@ -161,6 +166,11 @@ export const translations = {
           title: "DOGS",
           work: "Personal Project DOGS",
           description: "Information and management system for Countryside Canine Daycare."
+        },
+        dogspuntocero: {
+          title: "DOGSpuntocero",
+          work: "Personal Project DOGSpuntocero, AI chatbot",
+          description: "Landing page about canines."
         },
         pastas: {
           title: "PASTAS Reports",

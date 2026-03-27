@@ -41,6 +41,19 @@ const projects: Project[] = [
   },
   {
     id: 2,
+    title: "DOGSpuntocero",
+    work: "Proyecto personal DOGSpuntocero, chatbot con IA",
+    description: "Landing page sobre caninos.",
+    media: [
+      { type: 'video', url: "https://res.cloudinary.com/dkbmhzqvj/video/upload/v1774584823/dogspuntocero_t1qxuf.mp4", poster: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1774584643/poster_tdj8kr.jpg" },
+      { type: 'image', url: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1774584506/Dise%C3%B1o_sin_t%C3%ADtulo_6_fmbcnu.png" },
+    ],
+    tags: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Groq API", "Vite"],
+    github: "https://github.com/MrCortes23/DOGSpuntocero",
+    logoUrl: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1774585084/favicon_ipnrrz.png", // Add logo URL here
+  },
+  {
+    id: 3,
     title: "Reportes PASTAS",
     work: "Productos Alimenticios Doria S.A.S",
     description: "Sistema colaborativo de gestión de tipos de anomalías/reportes presentados dentro de la planta de producción.",
@@ -52,7 +65,7 @@ const projects: Project[] = [
     logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
   },
   {
-    id: 3,
+    id: 4,
     title: "Sistema de DADAS DE BAJA",
     work: "Productos Alimenticios Doria S.A.S",
     description: "Sistema notificador y aprobador por grupos de correos, generación de solicitudes de baja de productos/elementos.",
@@ -64,7 +77,7 @@ const projects: Project[] = [
     logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
   },
   {
-    id: 4,
+    id: 5,
     title: "Protocolo Higiene, Limpieza y Desinfección",
     work: "Productos Alimenticios Doria S.A.S",
     description: "Sistema de verificación y chequeo de cada maquina de producción para realizar el protocolo de higiene, limpieza y desinfección.",
@@ -76,7 +89,7 @@ const projects: Project[] = [
     logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
   },
   {
-    id: 5,
+    id: 6,
     title: "Sistema de SALIDA DE PRODUCTOS",
     work: "Pastas Comarrico S.A.S",
     description: "Sistema de control de salida de productos, estadísticas de salidas, generación de reportes y notificaciones de vencimiento/proximidad por correo electrónico.",
@@ -88,7 +101,7 @@ const projects: Project[] = [
     logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2UX3iIW0H2ZnPR-OTtRgHUHXPOtth8lOPqQ&s",
   },
   {
-    id: 6,
+    id: 7,
     title: "Portafolio CABRA",
     work: "Proyecto personal PORTAFOLIO",
     description: "Portafolio personal para exhibición de proyectos.",
@@ -268,6 +281,19 @@ export function Projects() {
     },
     {
       id: 2,
+      title: t('projects.projectsList.dogspuntocero.title'),
+      work: t('projects.projectsList.dogspuntocero.work'),
+      description: t('projects.projectsList.dogspuntocero.description'),
+      media: [
+        { type: 'video', url: "https://res.cloudinary.com/dkbmhzqvj/video/upload/v1774584823/dogspuntocero_t1qxuf.mp4", poster: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1774584643/poster_tdj8kr.jpg" },
+        { type: 'image', url: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1774584506/Dise%C3%B1o_sin_t%C3%ADtulo_6_fmbcnu.png" },
+      ],
+      tags: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Groq API", "Vite"],
+      github: "https://github.com/MrCortes23/DOGSpuntocero",
+      logoUrl: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1774585084/favicon_ipnrrz.png",
+    },
+    {
+      id: 3,
       title: t('projects.projectsList.pastas.title'),
       work: t('projects.projectsList.pastas.work'),
       description: t('projects.projectsList.pastas.description'),
@@ -279,7 +305,7 @@ export function Projects() {
       logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
     },
     {
-      id: 3,
+      id: 4,
       title: t('projects.projectsList.dadas.title'),
       work: t('projects.projectsList.dadas.work'),
       description: t('projects.projectsList.dadas.description'),
@@ -291,7 +317,7 @@ export function Projects() {
       logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
     },
     {
-      id: 4,
+      id: 5,
       title: t('projects.projectsList.phlyd.title'),
       work: t('projects.projectsList.phlyd.work'),
       description: t('projects.projectsList.phlyd.description'),
@@ -303,7 +329,7 @@ export function Projects() {
       logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvdptdCHB1bOarb5mxM-jRVL2XWq6FdYKUcA&s",
     },
     {
-      id: 5,
+      id: 6,
       title: t('projects.projectsList.salida.title'),
       work: t('projects.projectsList.salida.work'),
       description: t('projects.projectsList.salida.description'),
@@ -315,7 +341,7 @@ export function Projects() {
       logoUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2UX3iIW0H2ZnPR-OTtRgHUHXPOtth8lOPqQ&s",
     },
     {
-      id: 6,
+      id: 7,
       title: t('projects.projectsList.portfolio.title'),
       work: t('projects.projectsList.portfolio.work'),
       description: t('projects.projectsList.portfolio.description'),
