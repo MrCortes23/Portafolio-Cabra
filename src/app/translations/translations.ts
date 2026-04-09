@@ -6,7 +6,7 @@ export const translations = {
       projects: "Proyectos",
       skills: "Habilidades",
       contact: "Contacto",
-      downloadCV: "Descarga mi CV",
+      downloadCV: "Mira mis CV",
       brand: "CabraDev"
     },
     hero: {
@@ -105,6 +105,16 @@ export const translations = {
       successMessage: "¡Mensaje enviado con éxito! Me pondré en contacto pronto.",
       errorMessage: "Ocurrió un error al enviar el mensaje. Por favor, inténtalo de nuevo."
     },
+    cvModal: {
+      title: "Mira meeh's CV",
+      options: {
+        cv1: "CV Desarrollador RPA",
+        cv2: "CV Desarrollador AppScript",
+        cv3: "CV Desarrollador Full Stack",
+        cv4: "CV Analista de Software"
+      },
+      close: "Cerrar"
+    },
     footer: {
       role: "Desarrollador de Software",
       rights: "Todos los derechos reservados."
@@ -117,7 +127,7 @@ export const translations = {
       projects: "Projects",
       skills: "Skills",
       contact: "Contact",
-      downloadCV: "Download my CV",
+      downloadCV: "Download my CVs",
       brand: "CabraDev"
     },
     hero: {
@@ -215,6 +225,16 @@ export const translations = {
       success: "Successfully sent!",
       successMessage: "Message sent successfully! I will contact you soon.",
       errorMessage: "An error occurred while sending the message. Please try again."
+    },
+    cvModal: {
+      title: "Select meeh's CV",
+      options: {
+        cv1: "RPA Developer CV",
+        cv2: "AppScript Developer CV",
+        cv3: "Full Stack Developer CV",
+        cv4: "Software Analyst CV"
+      },
+      close: "Close"
     },
     footer: {
       role: "Software Developer",

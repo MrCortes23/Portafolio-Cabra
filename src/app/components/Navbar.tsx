@@ -3,6 +3,7 @@ import { Menu, X, FileText } from "lucide-react";
 import { Button } from "@/app/components/ui/button";
 import { useTranslation } from "@/app/context/TranslationContext";
 import { LanguageToggle } from "@/app/components/ui/LanguageToggle";
+import { CVModal } from "./CVModal";
 
 interface NavbarProps {
   logoUrl?: string;
@@ -10,6 +11,7 @@ interface NavbarProps {
 
 export function Navbar({ logoUrl }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isCVModalOpen, setIsCVModalOpen] = useState(false);
   const { t } = useTranslation();
 
   const navLinks = [
@@ -20,10 +22,6 @@ export function Navbar({ logoUrl }: NavbarProps) {
     { name: t('navbar.contact'), href: "#contact" }
   ];
 
-  const handleDownloadCV = () => {
-    window.open('/cv-DavidCortes.pdf', '_blank');
-  };
-
   const scrollToSection = (href: string) => {
     setIsOpen(false);
     const element = document.querySelector(href);
@@ -33,6 +31,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
   };
 
   return (
+    <>
     <nav className="fixed top-3 left-0 right-0 z-50 px-4 pt-6">
       <div className="max-w-4xl mx-auto">
         <div className={`bg-[#4a4e6d]/40 backdrop-blur-md border border-[#F4BB46]/10 px-8 py-3 shadow-lg ${isOpen ? 'rounded-2xl' : 'rounded-full'}`}>
@@ -116,7 +115,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
               <button
                 onClick={() => {
                   setIsOpen(false);
-                  handleDownloadCV();
+                  setIsCVModalOpen(true);
                 }}
                 className="w-full flex items-center justify-center gap-2 py-2 text-[#F4BB46] hover:text-[#f4d03f] transition-colors font-semibold"
               >
@@ -132,5 +131,7 @@ export function Navbar({ logoUrl }: NavbarProps) {
         </div>
       </div>
     </nav>
+    <CVModal isOpen={isCVModalOpen} onClose={() => setIsCVModalOpen(false)} />
+    </>
   );
 }
