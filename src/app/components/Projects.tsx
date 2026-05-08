@@ -21,9 +21,27 @@ interface Project {
   tags: string[];
   github: string;
   logoUrl?: string;
+  liveUrl?: string;
 }
 
 const projects: Project[] = [
+  {
+    id: 8,
+    title: "KantoTCGCol",
+    work: "E-Commerce de TCGs",
+    description: "Tienda online enfocada en juegos de cartas coleccionables con animaciones modernas y optimización SEO, pasarela de pagos integrada con BOLD, Scrapper de cartas.",
+    media: [
+      { type: 'image', url: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1778274639/11e4f8b0-c08b-40e1-a8a1-62aadba186ad.png" },
+      { type: 'image', url: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1778274628/52d3951e-df14-40e6-9f4d-aadade8879cd.png" },
+      { type: 'image', url: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1778274712/c071e285-3ad2-4145-a2dd-34ed036df962.png" },
+      { type: 'image', url: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1778274765/d03dba14-d62c-416b-a6bb-f0aa8f6bca1c.png" },
+      { type: 'image', url: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1778275040/Kanto_fmdhwg.png" }
+    ],
+    tags: ["PHP", "JavaScript", "HTML", "CSS", "MySQL", "Docker", "BOLD"],
+    github: "privado",
+    logoUrl: "https://cc-client-assets.nyc3.cdn.digitaloceanspaces.com/store/kantotcgcol/8ec26883bede4af48af726f3e5b17bdb/large/Logo%20Kanto%20bordes%20negros.png",
+    liveUrl: "https://kantotcgcol.shop",
+  },
   {
     id: 1,
     title: "DOGS",
@@ -51,6 +69,7 @@ const projects: Project[] = [
     tags: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Groq API", "Vite"],
     github: "https://github.com/MrCortes23/DOGSpuntocero",
     logoUrl: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1774585084/favicon_ipnrrz.png", // Add logo URL here
+    liveUrl: "https://dogspuntocero.vercel.app/",
   },
   {
     id: 3,
@@ -111,6 +130,7 @@ const projects: Project[] = [
     tags: ["React", "Vite", "Tailwind CSS", "TypeScript", "Node.js"],
     github: "https://github.com/MrCortes23/Portafolio-Cabra",
     logoUrl: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769571761/goatabout_yrstid.png",
+    liveUrl: "https://www.cabradeveloper.com",
   }
 ];
 
@@ -171,7 +191,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
                   <img
                     src={project.media[currentIndex]?.url}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain bg-black/10"
                   />
                 )}
               </motion.div>
@@ -215,7 +235,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
                 <img
                   src={project.logoUrl}
                   alt={`${project.title} Logo`}
-                  className="w-full h-full object-cover"
+                  className="w-[85%] h-[85%] object-contain rounded-full"
                 />
               </div>
             </div>
@@ -248,12 +268,29 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
         </div>
 
         <div className={`flex gap-4 ${isAlt ? 'justify-end' : 'justify-start'}`}>
-          <Button size="lg" variant="outline" asChild className="border-[#F4BB46]/50 text-gray-300 hover:bg-[#F4BB46] hover:text-[#232757] transition-all min-w-[120px]">
-            <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 justify-center">
-              <Github className="w-5 h-5" />
-              <span>{t('projects.repository')}</span>
-            </a>
-          </Button>
+          {project.github === "privado" ? (
+            <Button size="lg" variant="outline" disabled className="border-gray-600 text-gray-500 min-w-[120px] opacity-70 cursor-not-allowed">
+              <div className="flex items-center gap-2 justify-center">
+                <Github className="w-5 h-5" />
+                <span>Privado</span>
+              </div>
+            </Button>
+          ) : (
+            <Button size="lg" variant="outline" asChild className="border-[#F4BB46]/50 text-gray-300 hover:bg-[#F4BB46] hover:text-[#232757] transition-all min-w-[120px]">
+              <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 justify-center">
+                <Github className="w-5 h-5" />
+                <span>{t('projects.repository')}</span>
+              </a>
+            </Button>
+          )}
+          {project.liveUrl && (
+            <Button size="lg" variant="outline" asChild className="border-[#F4BB46]/50 text-gray-300 hover:bg-[#F4BB46] hover:text-[#232757] transition-all min-w-[120px]">
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 justify-center">
+                <ExternalLink className="w-5 h-5" />
+                <span>{t('projects.visit')}</span>
+              </a>
+            </Button>
+          )}
         </div>
       </div>
     </motion.div >
@@ -264,6 +301,23 @@ export function Projects() {
   const { t } = useTranslation();
 
   const projectsData: Project[] = [
+    {
+      id: 8,
+      title: t('projects.projectsList.kantotcgcol.title'),
+      work: t('projects.projectsList.kantotcgcol.work'),
+      description: t('projects.projectsList.kantotcgcol.description'),
+      media: [
+        { type: 'image', url: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1778274639/11e4f8b0-c08b-40e1-a8a1-62aadba186ad.png" },
+        { type: 'image', url: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1778274628/52d3951e-df14-40e6-9f4d-aadade8879cd.png" },
+        { type: 'image', url: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1778274712/c071e285-3ad2-4145-a2dd-34ed036df962.png" },
+        { type: 'image', url: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1778274765/d03dba14-d62c-416b-a6bb-f0aa8f6bca1c.png" },
+        { type: 'image', url: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1778275040/Kanto_fmdhwg.png" }
+      ],
+      tags: ["PHP", "JavaScript", "HTML", "CSS", "MySQL", "Docker", "BOLD"],
+      github: "privado",
+      logoUrl: "https://cc-client-assets.nyc3.cdn.digitaloceanspaces.com/store/kantotcgcol/8ec26883bede4af48af726f3e5b17bdb/large/Logo%20Kanto%20bordes%20negros.png",
+      liveUrl: "https://kantotcgcol.shop",
+    },
     {
       id: 1,
       title: t('projects.projectsList.dogs.title'),
@@ -291,6 +345,7 @@ export function Projects() {
       tags: ["React", "TypeScript", "Node.js", "Tailwind CSS", "Groq API", "Vite"],
       github: "https://github.com/MrCortes23/DOGSpuntocero",
       logoUrl: "https://res.cloudinary.com/dkbmhzqvj/image/upload/v1774585084/favicon_ipnrrz.png",
+      liveUrl: "https://dogspuntocero.vercel.app/",
     },
     {
       id: 3,
@@ -351,6 +406,7 @@ export function Projects() {
       tags: ["React", "Vite", "Tailwind CSS", "TypeScript", "Node.js"],
       github: "https://github.com/MrCortes23/Portafolio-Cabra",
       logoUrl: "https://res.cloudinary.com/dxjilnp8x/image/upload/v1769571761/goatabout_yrstid.png",
+      liveUrl: "https://www.cabradeveloper.com",
     }
   ];
   return (

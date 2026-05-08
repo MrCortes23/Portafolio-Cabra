@@ -50,7 +50,13 @@ export const translations = {
       description: "Proyectos desarrollados personalmente y laboralmente.",
       description2: "desarrollados",
       repository: "Repositorio",
+      visit: "Visítala!",
       projectsList: {
+        kantotcgcol: {
+          title: "KantoTCGCol",
+          work: "E-Commerce de TCGs",
+          description: "Tienda online enfocada en juegos de cartas coleccionables con animaciones modernas y optimización SEO, pasarela de pagos integrada con BOLD, Scrapper de cartas."
+        },
         dogs: {
           title: "DOGS",
           work: "Proyecto personal DOGS",
@@ -171,7 +177,13 @@ export const translations = {
       description: "Projects developed personally and professionally.",
       description2: "developed",
       repository: "Repository",
+      visit: "Visit!",
       projectsList: {
+        kantotcgcol: {
+          title: "KantoTCGCol",
+          work: "TCG E-Commerce",
+          description: "Online store focused on trading card games with modern animations and SEO optimization, BOLD payment gateway integration, Card scrapper."
+        },
         dogs: {
           title: "DOGS",
           work: "Personal Project DOGS",
